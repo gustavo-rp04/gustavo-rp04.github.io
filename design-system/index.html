@@ -1,0 +1,291 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Midnight &amp; Coral — Design System</title>
+<link rel="icon" href="../assets/img/favicon.svg" type="image/svg+xml">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="tokens.css">
+<link rel="stylesheet" href="components.css">
+<style>
+  /* Style-guide page layout only */
+  .sg-header { padding-block: var(--space-8) var(--space-6); border-bottom: 1px solid var(--color-line); }
+  .sg-header p { max-width: 640px; margin-top: var(--space-4); color: var(--color-text-muted); }
+  .sg-nav { display: flex; flex-wrap: wrap; gap: var(--space-2); margin-top: var(--space-5); padding: 0; list-style: none; }
+  .sg-nav a { display: inline-block; padding: 0.5rem 0.875rem; border: 1px solid var(--color-line); border-radius: var(--radius-pill); text-decoration: none; font-size: var(--text-small); }
+  .sg-nav a:hover { background: var(--color-tint); }
+  .sg-section { padding-block: var(--space-8) 0; }
+  .sg-section > .eyebrow { margin-bottom: var(--space-3); }
+  .sg-section > .h3 { margin-bottom: var(--space-3); }
+  .sg-section > p.sg-note { max-width: 680px; color: var(--color-text-muted); margin-bottom: var(--space-6); }
+  .sg-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 200px), 1fr)); gap: var(--space-4); }
+  .swatch { border: 1px solid var(--color-line); border-radius: var(--radius-md); overflow: hidden; background: var(--color-surface); }
+  .swatch__chip { height: 88px; }
+  .swatch__meta { padding: var(--space-3) var(--space-4); font-size: var(--text-small); }
+  .swatch__meta code { display: block; font-family: var(--font-mono); font-size: 12px; color: var(--color-text-subtle); }
+  .sg-demo { padding: var(--space-6); border: 1px solid var(--color-line); border-radius: var(--radius-lg); background: var(--color-surface); }
+  .sg-demo--dark { background: var(--color-ink); color: var(--color-on-dark); border-color: var(--color-ink); }
+  .sg-row { display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-4); }
+  .sg-type > * + * { margin-top: var(--space-5); }
+  .sg-type__label { font-family: var(--font-mono); font-size: 12px; color: var(--color-text-subtle); margin-bottom: var(--space-1); }
+  .sg-scale { display: flex; flex-wrap: wrap; align-items: flex-end; gap: var(--space-3); }
+  .sg-scale div { background: var(--color-coral); border-radius: 3px; }
+  .sg-scale figcaption, .sg-scale span { font-family: var(--font-mono); font-size: 11px; color: var(--color-text-subtle); }
+  pre.sg-code { margin: var(--space-4) 0 0; padding: var(--space-4); border-radius: var(--radius-md); background: var(--color-ink); color: var(--color-on-dark-soft); font-family: var(--font-mono); font-size: 12.5px; line-height: 1.6; overflow-x: auto; }
+  .sg-footer { margin-top: var(--space-section); padding-block: var(--space-6); border-top: 1px solid var(--color-line); color: var(--color-text-subtle); font-size: var(--text-small); }
+</style>
+<script>document.documentElement.classList.add("js");</script>
+</head>
+<body>
+<main class="container">
+
+  <header class="sg-header">
+    <p class="eyebrow">Design system · v1.0</p>
+    <h1 class="display" style="margin-top: var(--space-3)">Midnight <span class="highlight is-visible">&amp; Coral</span></h1>
+    <p>A small, editorial design system for personal brands and professional-services sites: deep midnight navy for authority, one coral highlight for energy, generous whitespace and a single geometric sans. Copy <code>tokens.css</code> and <code>components.css</code> into a new project, change the tokens, and every component follows.</p>
+    <ul class="sg-nav">
+      <li><a href="#colors">Color</a></li>
+      <li><a href="#type">Typography</a></li>
+      <li><a href="#space">Space &amp; shape</a></li>
+      <li><a href="#buttons">Buttons</a></li>
+      <li><a href="#labels">Badges &amp; chips</a></li>
+      <li><a href="#stats">Stats</a></li>
+      <li><a href="#patterns">Patterns</a></li>
+      <li><a href="#form">Form</a></li>
+      <li><a href="#motion">Motion</a></li>
+    </ul>
+  </header>
+
+  <!-- Color -->
+  <section id="colors" class="sg-section">
+    <p class="eyebrow">Foundations</p>
+    <h2 class="h3">Color</h2>
+    <p class="sg-note">Navy carries authority, coral is the only bright accent and is used sparingly: highlighted words, primary calls to action on dark, badges, numbers. Text on coral is always ink, never white. Body text on the light background passes WCAG AA at 8:1.</p>
+    <div class="sg-grid">
+      <div class="swatch"><div class="swatch__chip" style="background: var(--color-ink)"></div><div class="swatch__meta">Ink<code>--color-ink · #121835</code></div></div>
+      <div class="swatch"><div class="swatch__chip" style="background: var(--color-navy)"></div><div class="swatch__meta">Navy (accent)<code>--color-navy · #1B2550</code></div></div>
+      <div class="swatch"><div class="swatch__chip" style="background: var(--color-navy-700)"></div><div class="swatch__meta">Navy 700<code>--color-navy-700 · #2C3560</code></div></div>
+      <div class="swatch"><div class="swatch__chip" style="background: var(--color-coral)"></div><div class="swatch__meta">Coral (highlight)<code>--color-coral · #F2776A</code></div></div>
+      <div class="swatch"><div class="swatch__chip" style="background: var(--color-coral-600)"></div><div class="swatch__meta">Coral 600 (hover)<code>--color-coral-600 · #E8604F</code></div></div>
+      <div class="swatch"><div class="swatch__chip" style="background: var(--color-bg)"></div><div class="swatch__meta">Background<code>--color-bg · #F5F6F9</code></div></div>
+      <div class="swatch"><div class="swatch__chip" style="background: var(--color-tint)"></div><div class="swatch__meta">Tint<code>--color-tint · #E7EAF4</code></div></div>
+      <div class="swatch"><div class="swatch__chip" style="background: var(--color-line)"></div><div class="swatch__meta">Line<code>--color-line · #D6D9E3</code></div></div>
+      <div class="swatch"><div class="swatch__chip" style="background: var(--color-text-muted)"></div><div class="swatch__meta">Text muted<code>--color-text-muted · #474D63</code></div></div>
+      <div class="swatch"><div class="swatch__chip" style="background: var(--color-on-dark-muted)"></div><div class="swatch__meta">On dark muted<code>--color-on-dark-muted · #A9B0CC</code></div></div>
+    </div>
+  </section>
+
+  <!-- Type -->
+  <section id="type" class="sg-section">
+    <p class="eyebrow">Foundations</p>
+    <h2 class="h3">Typography</h2>
+    <p class="sg-note">One family, DM Sans, at regular weight with tight tracking for headings: modern and calm rather than loud. JetBrains Mono is reserved for small uppercase labels (eyebrows, dates, counters), a quiet nod to data and code. Sizes are fluid with <code>clamp()</code>, so they scale from phone to desktop without breakpoints.</p>
+    <div class="sg-demo sg-type">
+      <div><p class="sg-type__label">.display · 46→96px</p><p class="display">Strategic <span class="highlight is-visible">Data &amp; AI</span></p></div>
+      <div><p class="sg-type__label">.h2 · 36→64px</p><p class="h2">Relevant experience</p></div>
+      <div><p class="sg-type__label">.h3 · 24→32px</p><p class="h3">Data Strategy and Governance</p></div>
+      <div><p class="sg-type__label">.lead · 17→19px</p><p class="lead">From strategy to delivery, bridging the gap between business and tech.</p></div>
+      <div><p class="sg-type__label">body · 16px</p><p>Designing a multi-year Data &amp; AI transformation roadmap.</p></div>
+      <div><p class="sg-type__label">.eyebrow · 12px mono</p><p class="eyebrow">Services</p></div>
+    </div>
+  </section>
+
+  <!-- Space & shape -->
+  <section id="space" class="sg-section">
+    <p class="eyebrow">Foundations</p>
+    <h2 class="h3">Space &amp; shape</h2>
+    <p class="sg-note">An 8-based spacing scale, a 1280px container with fluid side gutters, and fluid section spacing (80→144px). Radii: 6px for images, 10px for tiles, 20px for large surfaces, pill for buttons and chips. Every interactive target is at least 44px.</p>
+    <div class="sg-demo">
+      <div class="sg-scale">
+        <figure style="margin:0"><div style="width:4px;height:4px"></div><figcaption>1·4</figcaption></figure>
+        <figure style="margin:0"><div style="width:8px;height:8px"></div><figcaption>2·8</figcaption></figure>
+        <figure style="margin:0"><div style="width:12px;height:12px"></div><figcaption>3·12</figcaption></figure>
+        <figure style="margin:0"><div style="width:16px;height:16px"></div><figcaption>4·16</figcaption></figure>
+        <figure style="margin:0"><div style="width:24px;height:24px"></div><figcaption>5·24</figcaption></figure>
+        <figure style="margin:0"><div style="width:32px;height:32px"></div><figcaption>6·32</figcaption></figure>
+        <figure style="margin:0"><div style="width:48px;height:48px"></div><figcaption>7·48</figcaption></figure>
+        <figure style="margin:0"><div style="width:64px;height:64px"></div><figcaption>8·64</figcaption></figure>
+      </div>
+      <div class="sg-row" style="margin-top: var(--space-6)">
+        <div style="width:96px;height:64px;background:var(--color-tint);border-radius:var(--radius-sm)"></div>
+        <div style="width:96px;height:64px;background:var(--color-tint);border-radius:var(--radius-md)"></div>
+        <div style="width:96px;height:64px;background:var(--color-tint);border-radius:var(--radius-lg)"></div>
+        <div style="width:96px;height:44px;background:var(--color-tint);border-radius:var(--radius-pill)"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Buttons -->
+  <section id="buttons" class="sg-section">
+    <p class="eyebrow">Components</p>
+    <h2 class="h3">Buttons</h2>
+    <p class="sg-note">Primary (ink) for the main action on light backgrounds, outline for the secondary action next to it, accent (coral) for the one action that must stand out, such as Download CV or Send. Buttons lift slightly on hover. Round icon buttons are for arrows, menu and back-to-top.</p>
+    <div class="sg-demo sg-row">
+      <a class="btn btn--primary" href="#buttons">Get in touch</a>
+      <a class="btn btn--outline" href="#buttons">What I do</a>
+      <a class="btn btn--accent" href="#buttons">Download CV</a>
+      <a class="btn btn--primary btn--small" href="#buttons">Small</a>
+      <button class="icon-btn" type="button" aria-label="Previous"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 6l-6 6 6 6"/></svg></button>
+      <button class="icon-btn icon-btn--accent" type="button" aria-label="Next"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg></button>
+    </div>
+<pre class="sg-code">&lt;a class="btn btn--primary" href="#contact"&gt;Get in touch&lt;/a&gt;
+&lt;a class="btn btn--outline" href="#services"&gt;What I do&lt;/a&gt;
+&lt;a class="btn btn--accent" href="cv.pdf" download&gt;Download CV&lt;/a&gt;
+&lt;button class="icon-btn icon-btn--accent" aria-label="Next"&gt;…svg…&lt;/button&gt;</pre>
+  </section>
+
+  <!-- Labels -->
+  <section id="labels" class="sg-section">
+    <p class="eyebrow">Components</p>
+    <h2 class="h3">Badges, chips, date tags, language switch</h2>
+    <p class="sg-note">Badge: one per page, for availability or status, with a softly pulsing dot. Chips: key words under a list item. Date tags: mono dates in timelines, filled coral when the item is current. Language switch: pill toggle in the header.</p>
+    <div class="sg-demo sg-row">
+      <p class="badge"><span class="badge__dot" aria-hidden="true"></span>Available for collaborations</p>
+      <ul class="chip-list"><li class="chip">Data Maturity Assessments</li><li class="chip">Lectures &amp; Masterclasses</li></ul>
+      <span class="date-tag date-tag--current">2023 – PRESENT</span>
+      <span class="date-tag">2018 – 2021</span>
+      <div class="lang-switch" aria-label="Language"><a href="#labels" aria-current="true">EN</a><a href="#labels">ES</a></div>
+    </div>
+  </section>
+
+  <!-- Stats -->
+  <section id="stats" class="sg-section">
+    <p class="eyebrow">Components</p>
+    <h2 class="h3">Stat tiles</h2>
+    <p class="sg-note">Three tiles maximum, in a row. Numbers count up when they scroll into view (<code>data-count</code>); the plus sign is coral.</p>
+    <div class="sg-demo"><div class="stats" style="max-width: 620px">
+      <div class="stat"><div class="stat__value"><span>20</span><span class="stat__plus">+</span></div><div class="stat__label">Years of experience</div></div>
+      <div class="stat"><div class="stat__value"><span>100</span><span class="stat__plus">+</span></div><div class="stat__label">Projects completed</div></div>
+      <div class="stat"><div class="stat__value"><span>7</span><span class="stat__plus">+</span></div><div class="stat__label">Countries reached</div></div>
+    </div></div>
+<pre class="sg-code">&lt;div class="stat"&gt;
+  &lt;div class="stat__value"&gt;&lt;span data-count="20"&gt;20&lt;/span&gt;&lt;span class="stat__plus"&gt;+&lt;/span&gt;&lt;/div&gt;
+  &lt;div class="stat__label"&gt;Years of experience&lt;/div&gt;
+&lt;/div&gt;</pre>
+  </section>
+
+  <!-- Patterns -->
+  <section id="patterns" class="sg-section">
+    <p class="eyebrow">Patterns</p>
+    <h2 class="h3">Section head</h2>
+    <p class="sg-note">Every section opens the same way: a mono eyebrow in a narrow left column, an h2 with one highlighted phrase, and an optional one-line intro. An action (like Download CV) can sit at the right of the title with <code>.section-head__row</code>. Highlight one phrase per heading, never more.</p>
+    <div class="sg-demo">
+      <div class="section-head" style="margin-bottom:0">
+        <p class="eyebrow">Services</p>
+        <div class="section-head__body">
+          <h2 class="h2">Projects and services I usually <span class="highlight is-visible">work on</span></h2>
+          <p class="section-head__intro">From strategy to delivery, bridging the gap between business and tech.</p>
+        </div>
+      </div>
+    </div>
+<pre class="sg-code">&lt;div class="section-head"&gt;
+  &lt;p class="eyebrow"&gt;Services&lt;/p&gt;
+  &lt;div class="section-head__body"&gt;
+    &lt;h2 class="h2"&gt;Projects and services I usually &lt;span class="highlight"&gt;work on&lt;/span&gt;&lt;/h2&gt;
+    &lt;p class="section-head__intro"&gt;One-line intro.&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</pre>
+
+    <h2 class="h3" style="margin-top: var(--space-8)">Service accordion</h2>
+    <p class="sg-note">For offers, capabilities or case studies. Collapsed, a row shows a coral icon disc (simple 1.6px-stroke line icons: compass, database, people, cap, microphone), the title with key-word chips under it, and a one-line description, so a whole list fits on one screen. Clicking a row opens its examples. It's built on native <code>&lt;details&gt;</code>, so it works without JavaScript and with the keyboard. On phones, the collapsed row shows only the number and title.</p>
+    <ol class="service-list">
+      <li class="service">
+        <details class="service__details" open>
+          <summary class="service__summary">
+            <div class="service__title-wrap"><span class="service__icon" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="6" rx="7" ry="3"/><path d="M5 6v6c0 1.7 3.1 3 7 3s7-1.3 7-3V6"/><path d="M5 12v6c0 1.7 3.1 3 7 3s7-1.3 7-3v-6"/></svg></span>
+              <div><h3 class="h3">Data Strategy and Governance</h3><ul class="chip-list"><li class="chip">Data Maturity Assessments</li><li class="chip">Data Architecture Alignment</li></ul></div></div>
+            <p class="service__desc">I build the data foundations, governance models and operating frameworks required to become fully data-driven.</p>
+            <span class="service__toggle" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span>
+          </summary>
+          <div class="service__more"><ul class="service__examples"><li>Designing or reviewing an enterprise Data Strategy</li><li>Assessing data maturity across the organization</li></ul></div>
+        </details>
+      </li>
+      <li class="service">
+        <details class="service__details">
+          <summary class="service__summary">
+            <div class="service__title-wrap"><span class="service__icon" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5 11a7 7 0 0 0 14 0"/><path d="M12 18v3"/><path d="M9 21h6"/></svg></span>
+              <div><h3 class="h3">Public Speaking</h3><ul class="chip-list"><li class="chip">Keynotes &amp; Masterclasses</li><li class="chip">Conferences</li></ul></div></div>
+            <p class="service__desc">I deliver engaging talks that translate complex topics around data, AI and transformation.</p>
+            <span class="service__toggle" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span>
+          </summary>
+          <div class="service__more"><ul class="service__examples"><li>Participation in international conferences</li></ul></div>
+        </details>
+      </li>
+    </ol>
+
+    <h2 class="h3" style="margin-top: var(--space-8)">Scroll timeline</h2>
+    <p class="sg-note">For experience, education or project history. A vertical line fills with coral as the visitor scrolls, and each dot lights up when reached (<code>main.js</code> sets <code>--progress</code>). Each entry is collapsed to its date, role and organization, and the details open on click (native <code>&lt;details&gt;</code>).</p>
+    <div class="timeline-wrap" style="--progress: 0.5">
+      <span class="timeline__progress" aria-hidden="true"></span>
+      <ol class="timeline">
+        <li class="timeline__item is-reached">
+          <span class="timeline__dot" aria-hidden="true"></span>
+          <details class="timeline__details" open>
+            <summary class="timeline__summary">
+              <div class="timeline__date"><span class="date-tag date-tag--current">2023 – PRESENT</span></div>
+              <div class="timeline__role"><h3 class="timeline__title">Data Strategy Senior Manager</h3><p class="timeline__org">European Commission (DG DIGIT)</p></div>
+              <span class="timeline__toggle" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></span>
+            </summary>
+            <ul class="timeline__points"><li>Reviewing Corporate Data Strategy for enterprise-wide AI transformation.</li></ul>
+          </details>
+        </li>
+        <li class="timeline__item">
+          <span class="timeline__dot" aria-hidden="true"></span>
+          <details class="timeline__details">
+            <summary class="timeline__summary">
+              <div class="timeline__date"><span class="date-tag">2018 – 2021</span></div>
+              <div class="timeline__role"><h3 class="timeline__title">Chief Data Officer &amp; Delivery Director</h3><p class="timeline__org">Inorbis Analytics</p></div>
+              <span class="timeline__toggle" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></span>
+            </summary>
+            <ul class="timeline__points"><li>Led a team of 30+ consultants.</li></ul>
+          </details>
+        </li>
+      </ol>
+    </div>
+
+    <h2 class="h3" style="margin-top: var(--space-8)">Brand mark</h2>
+    <p class="sg-note">Monogram tile (ink with a coral underline, inverted on dark backgrounds) plus the full name in semibold.</p>
+    <div class="sg-demo sg-row">
+      <span class="brand"><span class="brand__mark" aria-hidden="true">GR</span><span class="brand__name">Gustavo Ramirez Perez</span></span>
+    </div>
+
+    <h2 class="h3" style="margin-top: var(--space-8)">Other patterns used on the site</h2>
+    <p class="sg-note"><strong>Split hero:</strong> text column (badge, display title, lead, two buttons, stats) beside a photo that stretches to the same height. <strong>Carousel:</strong> scroll-snap track showing 3 / 2 / 1 items by screen size, with arrows, counter, dots and a full-screen lightbox. <strong>Dark band:</strong> the closing contact section and footer on ink. <strong>Sticky header:</strong> transparent at the top, frosted with a shadow once you scroll, collapsing to a full-screen menu under 860px. Markup for each is in the README.</p>
+  </section>
+
+  <!-- Form -->
+  <section id="form" class="sg-section">
+    <p class="eyebrow">Components</p>
+    <h2 class="h3">Form (on dark)</h2>
+    <p class="sg-note">Visible labels above outlined fields, coral focus ring, coral submit button. Fields sit two per row on wide screens and stack on narrow ones.</p>
+    <div class="sg-demo sg-demo--dark">
+      <form class="form" onsubmit="return false">
+        <div class="form__row">
+          <div class="field"><label for="sg-name">Name</label><input class="input" id="sg-name" placeholder="Your name"></div>
+          <div class="field"><label for="sg-email">Email</label><input class="input" id="sg-email" type="email" placeholder="Email address"></div>
+        </div>
+        <div class="field"><label for="sg-msg">Message</label><textarea class="input" id="sg-msg" rows="3" placeholder="Tell me about your project..."></textarea></div>
+        <button class="btn btn--accent" type="submit" style="align-self:flex-start">Send message</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Motion -->
+  <section id="motion" class="sg-section">
+    <p class="eyebrow">Foundations</p>
+    <h2 class="h3">Motion</h2>
+    <p class="sg-note">Motion is quiet and purposeful: content fades up 24px as it enters (700ms, ease-out, staggered with <code>--reveal-delay</code>); highlighter strokes draw from left to right (900ms); stats count up (1.4s); buttons lift 2px on hover (160ms). Everything is switched off when the visitor prefers reduced motion, and content stays visible if JavaScript is off.</p>
+    <div class="sg-demo sg-row">
+      <code>--ease-out: cubic-bezier(.2,.7,.2,1)</code>
+      <code>--duration-fast: 160ms</code>
+      <code>--duration-base: 320ms</code>
+      <code>--duration-slow: 700ms</code>
+      <code>--duration-draw: 900ms</code>
+    </div>
+  </section>
+
+  <footer class="sg-footer">Midnight &amp; Coral design system · built for gustavoramirez · see README.md for usage</footer>
+</main>
+</body>
+</html>

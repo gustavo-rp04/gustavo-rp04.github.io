@@ -1,0 +1,81 @@
+/* ==========================================================================
+   Midnight & Coral — design tokens
+   Every color, size, radius and timing used by the components lives here.
+   To re-skin a new project, change the values below and nothing else.
+   ========================================================================== */
+
+:root {
+  /* ---- Color: brand ---------------------------------------------------- */
+  --color-ink: #121835;          /* primary text, dark surfaces, primary buttons */
+  --color-navy: #1B2550;         /* accent: highlighted words, stat tiles */
+  --color-navy-700: #2C3560;     /* lines and tracks on dark surfaces */
+  --color-navy-600: #3A4578;     /* outlines on dark surfaces */
+  --color-coral: #F2776A;        /* highlight: markers, accent buttons, badges */
+  --color-coral-600: #E8604F;    /* coral hover */
+
+  /* ---- Color: neutrals ------------------------------------------------- */
+  --color-bg: #F5F6F9;           /* page background */
+  --color-surface: #FFFFFF;      /* cards, inputs on light */
+  --color-tint: #E7EAF4;         /* chips, subtle fills */
+  --color-line: #D6D9E3;         /* dividers and borders on light */
+
+  /* ---- Color: text ----------------------------------------------------- */
+  --color-text: var(--color-ink);
+  --color-text-muted: #474D63;   /* body copy (8:1 on bg) */
+  --color-text-subtle: #575D73;  /* captions, eyebrows (6.3:1 on bg) */
+  --color-on-dark: #F5F6F9;
+  --color-on-dark-soft: #C8D0EC;
+  --color-on-dark-muted: #A9B0CC;
+
+  /* ---- Typography ------------------------------------------------------ */
+  --font-sans: "DM Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+
+  --text-display: clamp(2.875rem, 6.4vw, 6rem);    /* 46 → 96px  hero title */
+  --text-h2: clamp(2.25rem, 4.6vw, 4rem);          /* 36 → 64px  section titles */
+  --text-h3: clamp(1.5rem, 2.4vw, 2rem);           /* 24 → 32px  item titles */
+  --text-h4: 1.375rem;                             /* 22px       list titles */
+  --text-lead: clamp(1.0625rem, 1.4vw, 1.1875rem); /* 17 → 19px  intros */
+  --text-body: 1rem;                               /* 16px */
+  --text-small: 0.875rem;                          /* 14px */
+  --text-caption: 0.8125rem;                       /* 13px */
+  --text-eyebrow: 0.75rem;                         /* 12px mono, uppercase */
+
+  --leading-tight: 1.02;
+  --leading-snug: 1.15;
+  --leading-body: 1.65;
+  --tracking-display: -0.04em;
+  --tracking-heading: -0.03em;
+  --tracking-eyebrow: 0.16em;
+
+  /* ---- Space ----------------------------------------------------------- */
+  --space-1: 0.25rem;   /* 4 */
+  --space-2: 0.5rem;    /* 8 */
+  --space-3: 0.75rem;   /* 12 */
+  --space-4: 1rem;      /* 16 */
+  --space-5: 1.5rem;    /* 24 */
+  --space-6: 2rem;      /* 32 */
+  --space-7: 3rem;      /* 48 */
+  --space-8: 4rem;      /* 64 */
+  --space-section: clamp(5rem, 10vw, 9rem);   /* 80 → 144px between sections */
+  --gutter: clamp(1rem, 4vw, 3.5rem);         /* 16 → 56px page side padding */
+  --container: 80rem;                         /* 1280px */
+
+  /* ---- Shape ----------------------------------------------------------- */
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 20px;
+  --radius-pill: 999px;
+  --tap-target: 44px;
+
+  /* ---- Elevation ------------------------------------------------------- */
+  --shadow-header: 0 1px 0 var(--color-line), 0 8px 24px -16px rgba(18, 24, 53, 0.25);
+  --shadow-lift: 0 10px 24px -12px rgba(18, 24, 53, 0.35);
+
+  /* ---- Motion ---------------------------------------------------------- */
+  --ease-out: cubic-bezier(0.2, 0.7, 0.2, 1);
+  --duration-fast: 160ms;
+  --duration-base: 320ms;
+  --duration-slow: 700ms;
+  --duration-draw: 900ms;   /* highlighter stroke */
+}

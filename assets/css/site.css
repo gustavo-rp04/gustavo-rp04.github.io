@@ -1,0 +1,120 @@
+/* Page-specific layout for gustavoramirez site. Reusable parts live in /design-system. */
+
+/* ---- Hero: intro text + portrait (photo matches the text column height) ---- */
+
+.hero {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: stretch;
+  gap: 3.5rem clamp(2.5rem, 6vw, 6rem);
+  padding-top: clamp(2.5rem, 6vw, 5.5rem);
+}
+.hero__text { flex: 1.3 1 520px; min-width: 0; }
+.hero__text .badge { margin-bottom: 1.75rem; }
+/* Name sits inside the H1 (for search engines) as a smaller line above the title */
+.hero__name {
+  display: block;
+  margin-bottom: var(--space-3);
+  font-size: clamp(1.25rem, 2vw, 1.75rem);
+  font-weight: 500;
+  line-height: 1.2;
+  letter-spacing: -0.015em;
+  color: var(--color-text-muted);
+}
+.hero__text .lead { margin-top: var(--space-6); max-width: 620px; }
+.hero__actions { display: flex; flex-wrap: wrap; gap: var(--space-3); margin-top: 2.25rem; }
+.hero .stats { margin-top: var(--space-7); max-width: 620px; }
+
+.hero__media {
+  position: relative;
+  flex: 1 1 340px;
+  min-width: 0;
+  max-width: 480px;
+  min-height: 440px;
+}
+.hero__media::before {
+  content: "";
+  position: absolute;
+  top: -14px;
+  right: -14px;
+  width: 50%;
+  height: 45%;
+  border-radius: var(--radius-md);
+  background: var(--color-coral);
+}
+.hero__media img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 20%;
+  border-radius: var(--radius-md);
+}
+@media (max-width: 900px) {
+  .hero__media { max-width: 520px; margin-inline: auto 14px; }
+}
+@media (max-width: 520px) {
+  .stats { grid-template-columns: 1fr; }
+  .stat { display: flex; align-items: baseline; gap: var(--space-4); }
+  .stat__label { margin-top: 0; }
+}
+
+/* ---- Projects: tighter head so all five rows fit on one laptop screen ---- */
+
+#projects .section-head { margin-bottom: var(--space-5); }
+#projects .section-head__intro { margin-top: var(--space-3); }
+
+/* ---- Gallery sits under the projects list ---- */
+
+.gallery { padding-top: clamp(3rem, 6vw, 5rem); }
+
+/* ---- Contact ---- */
+
+.contact {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-7) clamp(2.5rem, 6vw, 6rem);
+  padding-top: clamp(4.5rem, 9vw, 8rem);
+  padding-bottom: var(--space-8);
+}
+.contact__intro { flex: 1 1 400px; min-width: 0; }
+.contact__title {
+  margin-top: var(--space-5);
+  font-size: clamp(3.5rem, 8vw, 7.5rem);
+  font-weight: 400;
+  line-height: 0.95;
+  letter-spacing: -0.04em;
+}
+.contact__text { margin-top: 1.75rem; max-width: 460px; color: #CBD1E6; line-height: 1.7; }
+.contact .form { flex: 1 1 400px; min-width: 0; }
+.contact .btn--accent { align-self: flex-start; margin-top: var(--space-2); }
+
+/* ---- Footer ---- */
+
+.site-footer__grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2.5rem clamp(2.5rem, 6vw, 6rem);
+  padding-block: var(--space-7);
+  border-top: 1px solid var(--color-navy-700);
+}
+.site-footer__about { flex: 2 1 320px; min-width: 0; }
+.site-footer__about p { margin-top: 14px; max-width: 420px; color: var(--color-on-dark-muted); }
+.site-footer__col { flex: 1 1 180px; min-width: 0; }
+.site-footer__col .eyebrow { margin-bottom: var(--space-3); }
+.site-footer__col ul { padding: 0; list-style: none; }
+.site-footer__col a, .site-footer__col span { display: inline-block; padding-block: var(--space-2); text-decoration: none; }
+.site-footer__col a:hover { color: var(--color-coral); }
+.site-footer__col span { color: var(--color-on-dark-muted); }
+.site-footer__bottom {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: var(--space-3);
+  padding-block: var(--space-5) var(--space-6);
+  border-top: 1px solid var(--color-navy-700);
+  font-size: var(--text-small);
+  color: var(--color-on-dark-muted);
+}
+.site-footer .brand__name { font-size: 1.5rem; }
